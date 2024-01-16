@@ -27,7 +27,7 @@
                 </div>
                 <div class="form-group">
                     <label for="imagen">Imagen del Libro:</label>
-                    <input type="file" accept="image/*" capture="environment" class="form-control-file" id="imagen" required>
+                    <input type="file" accept="image/*" class="form-control-file" id="imagen" required>
                 </div>
                 <div class="form-group">
                     <label for="comentario">Comentario:</label>
@@ -63,48 +63,4 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Tu script personalizado de Firebase y JS -->
-<script>
-    // Puedes agregar tu lógica de Firebase y más funcionalidades JS aquí
-    function agregarLibro() {
-        // Obtener valores del formulario
-        var titulo = document.getElementById("titulo").value;
-        var imagenInput = document.getElementById("imagen");
-        var comentario = document.getElementById("comentario").value;
-        var calificacion = document.getElementById("calificacion").value;
-
-        // Validar que se hayan ingresado valores
-        if (titulo === "" || imagenInput.files.length === 0) {
-            alert("Por favor, ingresa el título y selecciona una imagen.");
-            return;
-        }
-
-        // Obtener la imagen seleccionada
-        var imagenFile = imagenInput.files[0];
-        var imagenURL = URL.createObjectURL(imagenFile);
-
-        // Crear elemento de la lista
-        var nuevoLibro = document.createElement("li");
-        nuevoLibro.className = "list-group-item";
-        nuevoLibro.innerHTML = `
-            <div class="row">
-                <div class="col-md-2">
-                    <img src="${imagenURL}" alt="${titulo}" class="img-fluid">
-                </div>
-                <div class="col-md-8">
-                    <h5>${titulo}</h5>
-                    <p>${comentario}</p>
-                    <p>Calificación: ${calificacion} estrellas</p>
-                </div>
-            </div>
-        `;
-
-        // Agregar libro a la lista
-        document.getElementById("listaLibros").appendChild(nuevoLibro);
-
-        // Limpiar el formulario
-        document.getElementById("formLibro").reset();
-    }
-</script>
-
-</body>
-</html>
+<scri
